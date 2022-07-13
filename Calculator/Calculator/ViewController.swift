@@ -67,7 +67,19 @@ class ViewController: UIViewController {
     }
     
     
-    
+    @IBAction func Equal(_ sender: Any) {
+        if(validInput())
+        {
+        let answser = NSExpression(format: calc)
+        let result = answser.expressionValue(with: nil, context: nil) as! Double
+        let resultAnser = formatResult(result: result)
+        CalculatorAnswer.text = resultAnser
+        }else{
+            let alert = UIAlertController (title: "Wrong Input", message: "Unable to calculate", preferredStyle: .alert)
+            alert.addAction(UIAlertAction (title: "Ok", style: .default))
+            self.present(alert,animated: true ,completion: nil)
+        }
+        }
     
     @IBAction func SevenTap(_ sender: Any) {
         printString(value: "7")
