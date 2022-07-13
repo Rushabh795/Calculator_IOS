@@ -65,8 +65,8 @@ class ViewController: UIViewController {
     @IBAction func Addition(_ sender: Any) {
         printString(value: "+")
     }
-    
-    
+
+
     @IBAction func Equal(_ sender: Any) {
         if(validInput())
         {
@@ -128,6 +128,10 @@ class ViewController: UIViewController {
             return true
         }
         if(char == "+")
+        {
+            return true
+        }
+        if(char == "√")
         {
             return true
         }
@@ -195,7 +199,15 @@ class ViewController: UIViewController {
         printString(value: "0")
     }
     
+    @IBAction func squreroot(_ sender: Any) {
+        let sqrtans = sqrt(Double(CalculatorDemo.text ?? "") ?? 0);
+        CalculatorAnswer.text = String(sqrtans)
+   
+       
+    }
+    
+        }
     
     
-}
+
 
