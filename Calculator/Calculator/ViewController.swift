@@ -80,6 +80,69 @@ class ViewController: UIViewController {
             self.present(alert,animated: true ,completion: nil)
         }
         }
+    func validInput() -> Bool{
+        var num = 0
+        var numIndex = [Int]()
+        for char in calc
+        {
+            if(charactorCount(char: char))
+            {
+                numIndex.append(num)
+            }
+            num += 1
+        }
+        var previous: Int = -1
+        
+        for index in numIndex {
+            if (index == 0)
+            {
+                return false
+            }
+            if (index == calc.count - 1)
+            {
+                return false
+            }
+            if (previous != -1)
+            {
+                if (index - previous == 1)
+                {
+                    return false
+                }
+            }
+            previous = index
+        }
+        return true
+    }
+    func charactorCount (char: Character) ->Bool
+    {
+        if(char == "*")
+        {
+            return true
+        }
+        if(char == "/")
+        {
+            return true
+        }
+        if(char == "-")
+        {
+            return true
+        }
+        if(char == "+")
+        {
+            return true
+        }
+        return false
+    }
+    func formatResult(result: Double) -> String
+    {
+        if (result.truncatingRemainder(dividingBy: 1) == 0)
+        {
+            return String(format: "%.0f",result)
+        }else{
+            return String(format: "%.2f",result)
+        }
+    }
+    
     
     @IBAction func SevenTap(_ sender: Any) {
         printString(value: "7")
