@@ -211,6 +211,15 @@ class ViewController: UIViewController {
     
         
     }
+    @IBAction func cube(_ sender: Any) {
+
+        let cube = (Double(CalculatorDemo.text ?? "") ?? 0) * (Double(CalculatorDemo.text ?? "") ?? 0)
+
+        * (Double(CalculatorDemo.text ?? "") ?? 0);
+
+        CalculatorAnswer.text = String(cube)
+
+    }
 }
     
     
