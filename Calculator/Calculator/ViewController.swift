@@ -202,11 +202,16 @@ class ViewController: UIViewController {
     @IBAction func squreroot(_ sender: Any) {
         let sqrtans = sqrt(Double(CalculatorDemo.text ?? "") ?? 0);
         CalculatorAnswer.text = String(sqrtans)
-   
-       
-    }
+   }
     
-        }
+    @IBAction func squre(_ sender: Any) {
+       
+        let sqr = (Double(CalculatorDemo.text ?? "") ?? 0) * (Double(CalculatorDemo.text ?? "") ?? 0);
+        CalculatorAnswer.text = String(sqr)
+    
+        
+    }
+}
     
     
 
